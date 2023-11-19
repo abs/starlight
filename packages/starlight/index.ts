@@ -29,10 +29,6 @@ export default function StarlightIntegration(opts: StarlightUserConfig): AstroIn
 			'astro:config:setup': ({ config, injectRoute, updateConfig }) => {
 				const useTranslations = createTranslationSystemFromFs(userConfig, config);
 				injectRoute({
-					pattern: '404',
-					entryPoint: '@astrojs/starlight/404.astro',
-				});
-				injectRoute({
 					pattern: '[...slug]',
 					entryPoint: '@astrojs/starlight/index.astro',
 				});
